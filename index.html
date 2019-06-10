@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Timer</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            cursor: pointer;
+            background-color: darkgreen;
+        }
+
+        input {
+            width: 50px;
+        }
+
+        #number {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            font-size: 5em;
+            font-family: sans-serif;
+        }
+
+        #clickTarget{
+            background-color: lightgreen;
+            height: 100%;
+        }
+    </style>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div id="clickTarget" onclick="clickBody()">
+        <div id="form" onclick="skipClick();">
+            <label for="time">Time:</label>
+            <input type="number" name="time" value="20" maxlength="4" size="4"><br>
+        </div>
+        <div id="number">
+            ..
+        </div>
+    </div>
+    <script>
+        var time;
+        var currentTime;
+        setInterval(function () { tick(); }, 1000);
+        var started = false;
+        var skipTheClick = false;
+
+        function skipClick() {
+            skipTheClick = true;
+        }
+
+        function clickBody() {
+            if (skipTheClick) {
+                skipTheClick = false;
+                return;
+            }
+            if (started) {
+                currentTime = time;
+                document.getElementById("clickTarget").style.backgroundColor = "green";
+            } else {
+                document.getElementById("form").style.display = "none";
+                document.getElementById("clickTarget").style.backgroundColor = "green";
+                document.getElementById("number").innerHTML = "";
+                started = true;
+                setTime();
+            }
+        }
+
+        function setTime() {
+            time = document.getElementsByName("time")[0].value;
+            currentTime = time;
+        }
+
+        function tick() {
+            if (currentTime === 0) {
+                end();
+            } else {
+                currentTime--;
+                if (started) {
+                    document.getElementById("number").innerHTML = currentTime;
+                }
+            }
+            console.log(currentTime);
+        }
+
+        function end() {
+            document.getElementById("clickTarget").style.backgroundColor = "red";
+            document.getElementById("number").innerHTML = "101";
+        }
+    </script>
+</body>
+
+</html>
