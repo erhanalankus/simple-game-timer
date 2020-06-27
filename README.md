@@ -1,5 +1,5 @@
 # Simple Game Turn Timer
-A very simple JavaScript game timer. Aims to punish the player who takes too much time for their turn.
+A very simple JavaScript game turn timer. Aims to punish the player who takes too much time for their turn.
 
 It can be used at:
 http://yunus.hacettepe.edu.tr/~erhan03/timer/
