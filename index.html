@@ -4,33 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Timer</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            cursor: pointer;
-            background-color: darkgreen;
-        }
-
-        input {
-            width: 50px;
-        }
-
-        #number {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            font-size: 5em;
-            font-family: sans-serif;
-        }
-
-        #clickTarget{
-            background-color: lightgreen;
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
@@ -45,69 +19,7 @@
             ..
         </div>
     </div>
-    <script>
-        var time;
-        var currentTime;
-        setInterval(function () { tick(); }, 1000);
-        var started = false;
-        var skipTheClick = false;
-
-        function skipClick() {
-            skipTheClick = true;
-        }
-
-        function clickBody() {
-            if (skipTheClick) {
-                skipTheClick = false;
-                return;
-            }            
-            if (started) {
-                makeScreenLightGreen();
-                document.getElementById("number").innerHTML = time;
-                currentTime = time;
-            } else {
-                document.getElementById("form").style.display = "none";
-                document.getElementById("number").innerHTML = "";
-                started = true;
-                setTime();
-            }
-        }
-
-        function setTime() {
-            time = document.getElementsByName("time")[0].value;
-            currentTime = time;
-        }
-
-        function tick() {
-            if (currentTime === 0) {
-                end();
-            } else {
-                makeScreenGreen();
-                currentTime--;
-                if (started) {
-                    document.getElementById("number").innerHTML = currentTime;
-                }
-            }
-            console.log(currentTime);
-        }
-
-        function end() {
-            makeScreenRed();
-            document.getElementById("number").innerHTML = "101";
-        }
-
-        function makeScreenGreen(){
-            document.getElementById("clickTarget").style.backgroundColor = "green";
-        }
-
-        function makeScreenRed(){
-            document.getElementById("clickTarget").style.backgroundColor = "red";
-        }
-
-        function makeScreenLightGreen(){
-            document.getElementById("clickTarget").style.backgroundColor = "greenyellow";
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

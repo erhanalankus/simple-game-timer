@@ -1,0 +1,25 @@
+html,
+body {
+    height: 100%;
+    cursor: pointer;
+    background-color: darkgreen;
+}
+
+input {
+    width: 50px;
+}
+
+#number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    font-family: sans-serif;
+}
+
+#clickTarget {
+    background-color: lightgreen;
+    height: 100%;
+}
