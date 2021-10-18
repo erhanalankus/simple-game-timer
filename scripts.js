@@ -47,7 +47,7 @@ function tick() {
 
 function end() {
     makeScreenRed();
-    document.getElementById("number").innerHTML = "101";
+    document.getElementById("number").innerHTML = "💥";
 }
 
 function makeScreenGreen() {
