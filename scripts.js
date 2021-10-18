@@ -6,6 +6,9 @@ setInterval(function() {
 var started = false;
 var skipTheClick = false;
 
+var audioBeep = new Audio("sound-effects/beep.mp3");
+var audioAlert = new Audio("sound-effects/alert.mp3");
+
 function skipClick() {
     skipTheClick = true;
 }
@@ -33,16 +36,26 @@ function setTime() {
 }
 
 function tick() {
+    console.log(currentTime);
+
+    if (currentTime < 0) {
+        return;
+    }
+
     if (currentTime === 0) {
+        audioAlert.play();
         end();
     } else {
         makeScreenGreen();
-        currentTime--;
         if (started) {
             document.getElementById("number").innerHTML = currentTime;
+            if (currentTime < 6 && currentTime >= 0) {
+                audioBeep.play();
+            }
         }
     }
-    console.log(currentTime);
+
+    currentTime--;
 }
 
 function end() {
