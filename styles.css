@@ -3,10 +3,16 @@ body {
     height: 100%;
     cursor: pointer;
     background-color: darkgreen;
+    margin: 0;
 }
 
 input {
     width: 50px;
+}
+
+#form {
+    padding-top: 1em;
+    padding-left: 0.5em;
 }
 
 #number {
