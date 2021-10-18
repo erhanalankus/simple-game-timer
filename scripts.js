@@ -9,6 +9,21 @@ var skipTheClick = false;
 var audioBeep = new Audio("sound-effects/beep.mp3");
 var audioAlert = new Audio("sound-effects/alert.mp3");
 
+var goFS = document.getElementById("goFS");
+goFS.addEventListener("click", function() {
+    var doc = window.document;
+    var docEl = doc.documentElement;
+
+    var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+    var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+    if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+        requestFullScreen.call(docEl);
+    } else {
+        cancelFullScreen.call(doc);
+    }
+}, false);
+
 function skipClick() {
     skipTheClick = true;
 }
