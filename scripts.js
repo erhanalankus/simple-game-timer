@@ -7,7 +7,7 @@ var started = false;
 var skipTheClick = false;
 
 var audioBeep = new Audio("sound-effects/beep.mp3");
-var audioAlert = new Audio("sound-effects/alert.mp3");
+var audioAlert = new Audio("sound-effects/alert2.mp3");
 
 var goFS = document.getElementById("goFS");
 goFS.addEventListener("click", function() {
