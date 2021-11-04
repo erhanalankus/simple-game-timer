@@ -19,8 +19,10 @@ goFS.addEventListener("click", function() {
 
     if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
         requestFullScreen.call(docEl);
+        document.getElementById("goFS").style.opacity = 0.2;
     } else {
         cancelFullScreen.call(doc);
+        document.getElementById("goFS").style.opacity = 1;
     }
 }, false);
 
