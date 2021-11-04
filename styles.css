@@ -8,11 +8,15 @@ body {
 
 input {
     width: 50px;
+    font-size: large;
+    padding-left: 0.3em;
 }
 
 #form {
     padding-top: 1em;
     padding-left: 0.5em;
+    font-size: x-large;
+    font-weight: bolder;
 }
 
 #number {
@@ -33,4 +37,6 @@ input {
 #goFS {
     float: right;
     margin-right: 1em;
+    font-size: x-large;
+    font-weight: bolder;
 }
