@@ -4,7 +4,7 @@
     "name": "Game Turn Timer",
     "short_name": "Game Timer",
     "scope": "/",
-    "display": "fullscreen",
+    "display": "minimal-UI",
     "start_url": "./",
     "background_color": "transparent",
     "theme_color": "transparent",
