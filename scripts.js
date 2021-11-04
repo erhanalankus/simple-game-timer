@@ -38,7 +38,8 @@ function clickBody() {
         document.getElementById("number").innerHTML = time;
         currentTime = time;
     } else {
-        document.getElementById("form").style.display = "none";
+        document.getElementById("formLabel").style.display = "none";
+        document.getElementById("formInput").style.display = "none";
         document.getElementById("number").innerHTML = "";
         started = true;
         setTime();
