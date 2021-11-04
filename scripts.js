@@ -9,8 +9,8 @@ var skipTheClick = false;
 var audioBeep = new Audio("sound-effects/beep.mp3");
 var audioAlert = new Audio("sound-effects/alert2.mp3");
 
-var goFS = document.getElementById("goFS");
-goFS.addEventListener("click", function() {
+var toggleFulscreenButton = document.getElementById("toggleFulscreenButton");
+toggleFulscreenButton.addEventListener("click", function() {
     var doc = window.document;
     var docEl = doc.documentElement;
 
@@ -19,10 +19,10 @@ goFS.addEventListener("click", function() {
 
     if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
         requestFullScreen.call(docEl);
-        document.getElementById("goFS").style.opacity = 0.2;
+        document.getElementById("toggleFulscreenButton").style.opacity = 0.2;
     } else {
         cancelFullScreen.call(doc);
-        document.getElementById("goFS").style.opacity = 1;
+        document.getElementById("toggleFulscreenButton").style.opacity = 1;
     }
 }, false);
 
